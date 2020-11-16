@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_item_product_in_basket"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_marginTop="5dp"
+    android:layout_marginHorizontal="5dp"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="5dp"
+    app:cardBackgroundColor="@android:color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_product_basket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/iv_photo_basket"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/no_photo"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/iv_like_basket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/cv_product_basket"
+            android:layout_alignEnd="@id/cv_product_basket"
+            android:layout_margin="5dp"
+            android:translationZ="2dp"
+            android:background="@color/transparent"
+            android:src="@drawable/ic_like_border_32"/>
+
+        <FrameLayout
+            android:id="@+id/fl_photosLoader_basket"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@id/cv_product_basket"
+            android:layout_alignStart="@id/cv_product_basket"
+            android:layout_alignEnd="@id/cv_product_basket"
+            android:layout_alignBottom="@id/cv_product_basket"
+            android:layout_above="@+id/tv_name_basket"
+            android:visibility="gone"
+            android:translationZ="2dp">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_name_basket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/cv_product_basket"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="15dp"
+            android:text="Торт Мега Суперпуперский"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"/>
+
+        <TextView
+            android:id="@+id/tv_priceProduct_basket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name_basket"
+            android:layout_toEndOf="@id/cv_product_basket"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="15dp"
+            android:text="@string/cap_tv_price"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+
+
+        <LinearLayout
+            android:id="@+id/ll_countProduct_basket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_priceProduct_basket"
+            android:layout_toEndOf="@id/cv_product_basket"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="Количество: "
+                android:textSize="14sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tv_countText_basket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 шт."
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_unfold_more_24"
+                app:tint="@color/black"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_result_basket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_countProduct_basket"
+            android:layout_toEndOf="@id/cv_product_basket"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="Итог:"
+                android:textSize="14sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tv_resultPrice_basket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="400 ₽"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_removeFromBasket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/cv_product_basket"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Удалить"
+                android:textSize="16sp"
+                android:textColor="@color/burgundy" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_remove_shopping_cart_24"
+                app:tint="@color/burgundy"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

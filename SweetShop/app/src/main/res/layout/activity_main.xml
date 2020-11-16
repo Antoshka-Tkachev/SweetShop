@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ztestfirebase.MainActivity"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name" />
+
+    <EditText
+        android:id="@+id/et_surname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Surname" />
+
+    <EditText
+        android:id="@+id/et_width"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Width" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Okey"
+        android:onClick="onClickOk"/>
+
+    <TextView
+        android:id="@+id/tv_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="16sp" />
+
+
+</LinearLayout>

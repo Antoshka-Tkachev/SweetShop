@@ -1,0 +1,14 @@
+<resources>
+    <!--Название приложения-->
+    <string name="app_name">SweetShop</string>
+
+    <!--Главное меню-->
+    <string name="menu_item_catalog"><b>Каталог</b></string>
+    <string name="menu_item_favorites"><b>Избранное</b></string>
+    <string name="menu_item_basket"><b>Корзина</b></string>
+    <string name="menu_item_profile"><b>Профиль</b></string>
+
+    <!--Заглушки-->
+    <string name="cap_tv_price"><b>200 ₽</b> за 1 шт.</string>
+
+</resources>

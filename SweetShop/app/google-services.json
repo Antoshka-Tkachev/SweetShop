@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1061709434684",
+    "firebase_url": "https://sweet-shop-f458d.firebaseio.com",
+    "project_id": "sweet-shop-f458d",
+    "storage_bucket": "sweet-shop-f458d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1061709434684:android:78059ae00642c21d5bd839",
+        "android_client_info": {
+          "package_name": "com.toshkadeveloper.sweetshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1061709434684-lngthot41r37knapkb0ld0tapqq1utir.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.toshkadeveloper.sweetshop",
+            "certificate_hash": "eb34da0d2801ab23ca64550bd8788c5bf202cf92"
+          }
+        },
+        {
+          "client_id": "1061709434684-64u4n9hn619o22rmpkk3a5oe489nispd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-jY0QPQC_rQUm1IvilFLyKFSk7TMy01I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1061709434684-64u4n9hn619o22rmpkk3a5oe489nispd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

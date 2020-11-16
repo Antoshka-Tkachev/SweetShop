@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_description"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:elevation="3dp"
+        android:translationZ="3dp"
+        style="@style/Toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_back_description"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_back_24"
+                app:tint="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/tv_title_description"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/iv_back_description"
+                android:gravity="center_vertical"
+                android:text="Название товара "
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimary"
+                android:maxLines="1"/>
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_description"
+        android:layout_above="@+id/v_shadowBottomNavigation_description">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_productPhoto_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                app:cardCornerRadius="20dp">
+
+            <ImageView
+                android:id="@+id/iv_photoProduct_description"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/no_photo"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="15dp">
+
+                <TextView
+                    android:id="@+id/tv_name_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Название товара"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="22sp"
+                    android:textStyle="bold"/>
+
+                <ImageView
+                    android:id="@+id/iv_areAvailable_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/tv_areAvailable_description"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/ic_check_box_24"
+                    app:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/tv_areAvailable_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_name_description"
+                    android:layout_toEndOf="@+id/iv_areAvailable_description"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:text="Есть в наличии"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tv_countInStock_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_name_description"
+                    android:layout_toEndOf="@+id/tv_areAvailable_description"
+                    android:layout_marginTop="10dp"
+                    android:text="5 шт."
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tv_composition_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_areAvailable_description"
+                    android:layout_marginTop="5dp"
+                    android:text="Состав"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tv_compositionText_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_composition_description"
+                    android:text="Тут содержится очень длинный текст соствата, допутсим: Масло , персики, лук, укром, шоколад, вареники, возможно щепоктка сооли и 5 кубиков сохара, эмуляторы, эмульгаторы и всякие аромомтизоторы и загустителт"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/tv_description_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_compositionText_description"
+                    android:layout_marginTop="10dp"
+                    android:text="Описание"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tv_descriptionText_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_description_description"
+                    android:text="Тут содержится очень длинный текст соствата, допутсим: Масло , персики, лук, укром, шоколад, вареники, возможно щепоктка сооли и 5 кубиков сохара, эмуляторы, эмульгаторы и всякие аромомтизоторы и загустителт"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/tv_nutritionalValue_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_descriptionText_description"
+                    android:layout_marginTop="10dp"
+                    android:paddingBottom="5dp"
+                    android:text="Пищевая ценность"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_nutritionalValue1_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tv_nutritionalValue_description"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="30dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingVertical="3dp"
+                                android:gravity="center"
+                                android:text="Белки"
+                                android:textSize="16sp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:background="@drawable/background_up_card"/>
+
+                            <TextView
+                                android:id="@+id/tv_valueProteins_description"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:paddingVertical="5dp"
+                                android:gravity="center"
+                                android:text="14г"
+                                android:textSize="18sp"
+                                android:textColor="@color/black"
+                                android:background="@drawable/background_down_card"/>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="30dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingVertical="3dp"
+                                android:gravity="center"
+                                android:text="Жиры"
+                                android:textSize="16sp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:background="@drawable/background_up_card"/>
+
+                            <TextView
+                                android:id="@+id/tv_valueFats_description"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:paddingVertical="5dp"
+                                android:gravity="center"
+                                android:text="67г"
+                                android:textSize="18sp"
+                                android:textColor="@color/black"
+                                android:background="@drawable/background_down_card"/>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_nutritionalValue2_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/ll_nutritionalValue1_description"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="10dp"
+                        android:paddingVertical="3dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="30dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingVertical="3dp"
+                                android:gravity="center"
+                                android:text="Углеводы"
+                                android:textSize="16sp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:background="@drawable/background_up_card"/>
+
+                            <TextView
+                                android:id="@+id/tv_valueCarbohydrates_description"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:paddingVertical="5dp"
+                                android:gravity="center"
+                                android:text="300г"
+                                android:textSize="18sp"
+                                android:textColor="@color/black"
+                                android:background="@drawable/background_down_card"/>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="30dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingVertical="3dp"
+                                android:gravity="center"
+                                android:text="Калории"
+                                android:textSize="16sp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:background="@drawable/background_up_card"/>
+
+                            <TextView
+                                android:id="@+id/tv_valueCalories_description"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:paddingVertical="5dp"
+                                android:gravity="center"
+                                android:text="1234"
+                                android:textSize="18sp"
+                                android:textColor="@color/black"
+                                android:background="@drawable/background_down_card"/>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/v_shadowBottomNavigation_description"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_above="@id/rl_inBasketPanel_description"
+        android:background="@drawable/shadow_top" />
+
+    <RelativeLayout
+        android:id="@+id/rl_inBasketPanel_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/tv_price_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="10dp"
+            android:layout_centerVertical="true"
+            android:text="54321P/шт"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/iv_like_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/ll_inBasket_description"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_like_border_32"
+            app:tint="@color/burgundy" />
+
+        <LinearLayout
+            android:id="@+id/ll_inBasket_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:paddingVertical="5dp"
+            android:paddingHorizontal="10dp"
+            android:background="@drawable/background_button_with_green_border">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="В корзину"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary" />
+
+            <ImageView
+                android:id="@+id/iv_inBasket_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_add_shopping_cart_24"
+                app:tint="@color/colorPrimary" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
