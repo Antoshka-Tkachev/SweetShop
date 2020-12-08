@@ -60,6 +60,53 @@
 
     </FrameLayout>
 
+    <FrameLayout
+        android:id="@+id/fl_emptyBasket_basket"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_basket"
+        android:layout_alignParentBottom="true"
+        android:translationZ="2dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_remove_shopping_cart_144"
+                app:tint="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Корзина пуста,\nдля добавления товаров\nперейдите в каталог"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold|italic"/>
+
+            <Button
+                android:id="@+id/btn_openCatalog_basket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingHorizontal="30dp"
+                android:layout_gravity="center"
+                android:text="Перейти в каталог"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/colorPrimary" />
+
+        </LinearLayout>
+    </FrameLayout>
+
     <View
         android:id="@+id/v_shadowBottomNavigation_basket"
         android:layout_width="match_parent"

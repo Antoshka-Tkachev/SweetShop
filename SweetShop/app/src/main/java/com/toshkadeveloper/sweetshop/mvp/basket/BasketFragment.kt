@@ -1,5 +1,7 @@
 package com.toshkadeveloper.sweetshop.mvp.basket
 
+import android.app.Activity.RESULT_OK
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,20 +11,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.toshkadeveloper.sweetshop.R
 import com.toshkadeveloper.sweetshop.adapter.BasketAdapter
 import com.toshkadeveloper.sweetshop.adapter.interfaces.IBasketAdapter
-import com.toshkadeveloper.sweetshop.adapter.interfaces.ICategoriesAdapter
 import com.toshkadeveloper.sweetshop.logic.data.ProductInBasket
 import com.toshkadeveloper.sweetshop.mvp.home.HomeActivity
+import com.toshkadeveloper.sweetshop.mvp.order.OrderActivity
 import kotlinx.android.synthetic.main.fragment_basket.*
 import kotlinx.android.synthetic.main.fragment_basket.tv_price_basket
-import kotlinx.android.synthetic.main.fragment_catalog.*
-import kotlinx.android.synthetic.main.item_product_in_basket.*
 
 class BasketFragment : Fragment(), IBasketContract.View, View.OnClickListener {
 
     private lateinit var basketAdapter: IBasketAdapter
     private lateinit var presenter: IBasketContract.Presenter
     private lateinit var linearLayoutManager: LinearLayoutManager
-
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_basket, container, false);
@@ -41,7 +40,11 @@ class BasketFragment : Fragment(), IBasketContract.View, View.OnClickListener {
         basketAdapter = BasketAdapter(requireContext(), products)
         rv_basket.adapter = basketAdapter as BasketAdapter
         if (products.isEmpty()) {
+            v_shadowBottomNavigation_basket.visibility = View.GONE
             rl_orderPanel_basket.visibility = View.GONE
+            fl_emptyBasket_basket.visibility = View.VISIBLE
+        } else {
+            fl_emptyBasket_basket.visibility = View.GONE
         }
     }
 
@@ -55,7 +58,6 @@ class BasketFragment : Fragment(), IBasketContract.View, View.OnClickListener {
             rv_basket.visibility = View.GONE
             v_shadowBottomNavigation_basket.visibility = View.GONE
             rl_orderPanel_basket.visibility = View.GONE
-
         } else {
             fl_loaderContainer_basket.visibility = View.GONE
             rv_basket.visibility = View.VISIBLE
@@ -74,6 +76,7 @@ class BasketFragment : Fragment(), IBasketContract.View, View.OnClickListener {
     override fun onClick(v: View?) {
         when(v?.id) {
             R.id.ll_order_basket -> onClickOrder()
+            R.id.btn_openCatalog_basket -> onClickOpenCatalog()
         }
     }
 
@@ -91,10 +94,23 @@ class BasketFragment : Fragment(), IBasketContract.View, View.OnClickListener {
 
     private fun initListeners() {
         ll_order_basket.setOnClickListener(this)
+        btn_openCatalog_basket.setOnClickListener(this)
     }
 
     private fun onClickOrder() {
-
+        val intent = Intent(requireContext(), OrderActivity::class.java)
+        intent.putExtra("USER", getHomeActivity().getUser())
+        startActivityForResult(intent, 0)
     }
 
+    private fun onClickOpenCatalog() {
+        getHomeActivity().setCatalogFragment()
+        getHomeActivity().setSelectedCatalogItem()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if(resultCode == RESULT_OK) {
+            updateAdapter(mutableListOf())
+        }
+    }
 }

@@ -38,12 +38,14 @@ class ProductInBasketHolder(itemView: View) :  RecyclerView.ViewHolder(itemView)
         }
         iv_photo.setOnClickListener {
             val intent = Intent(itemView.context, ProductDescriptionActivity::class.java)
-            intent.putExtra("KEY_PRODUCT", product.id)
+            intent.putExtra("KEY_PRODUCT_ID", product.id)
+            intent.putExtra("KEY_PRODUCT_IN_BASKET", product)
             itemView.context.startActivity(intent)
         }
         tv_name.setOnClickListener {
             val intent = Intent(itemView.context, ProductDescriptionActivity::class.java)
-            intent.putExtra("KEY_PRODUCT", product.id)
+            intent.putExtra("KEY_PRODUCT_ID", product.id)
+            intent.putExtra("KEY_PRODUCT_IN_BASKET", product)
             itemView.context.startActivity(intent)
         }
         ll_removeFromBasket.setOnClickListener {

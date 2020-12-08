@@ -10,6 +10,9 @@ interface IHomeContract {
     interface View : MvpView {
         fun setSearchFragment(fragment : SearchCatalogFragment)
         fun setCatalogFragment()
+        fun setBasketFragment()
+        fun setSelectedCatalogItem()
+        fun setSelectedBasketItem()
         fun getUser(): User
     }
 

@@ -6,8 +6,8 @@ import com.toshkadeveloper.sweetshop.mvp.splashscreen.ISplashScreenContract
 import com.toshkadeveloper.sweetshop.repository.firebasedb.interfaces.IUserDBTable
 
 class UserDBTable : IUserDBTable {
-    private val KEY_PRODUCT: String = "USER"
-    private var database: DatabaseReference = FirebaseDatabase.getInstance().getReference(KEY_PRODUCT)
+    private val KEY_USER: String = "USER"
+    private var database: DatabaseReference = FirebaseDatabase.getInstance().getReference(KEY_USER)
 
     override fun isExistUser(uid: String, model: ISplashScreenContract.Model) {
         val queryUser = database.orderByKey().startAt(uid).endAt(uid)

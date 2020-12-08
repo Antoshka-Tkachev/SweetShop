@@ -56,7 +56,7 @@ class SplashScreenPresenter : PresenterBase<ISplashScreenContract.View>(), ISpla
         /**Перевести на корутины*/
         Handler().postDelayed({
             val intent = Intent(getView().getViewContext(), HomeActivity::class.java)
-            intent.putExtra("user", user)
+            intent.putExtra("USER", user)
             getView().apply {
                 getViewContext().startActivity(intent)
                 closeActivity()

@@ -3,6 +3,7 @@ package com.toshkadeveloper.sweetshop.mvp.basecatalog
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -102,6 +103,18 @@ abstract class BaseCatalogFragment(
 
     override fun addProductInBasket(product: Product) {
         presenter.addProductInBasket(product)
+    }
+
+    override fun addProductInFavorites(product: Product) {
+        presenter.addProductInFavorites(product)
+    }
+
+    override fun showToastAddInBasket() {
+        Toast.makeText(requireContext(), "Товар добавлен в корзину", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun showToastAddInFavorites() {
+        Toast.makeText(requireContext(), "Товар добавлен в избранное", Toast.LENGTH_SHORT).show()
     }
 
     companion object {

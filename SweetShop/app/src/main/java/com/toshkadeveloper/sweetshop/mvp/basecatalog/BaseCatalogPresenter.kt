@@ -23,6 +23,18 @@ abstract class BaseCatalogPresenter :
         model.addProductInBasket(product)
     }
 
+    override fun addProductInBasketResult() {
+        getView().showToastAddInBasket()
+    }
+
+    override fun addProductInFavorites(product: Product) {
+        model.addProductInFavorites(product)
+    }
+
+    override fun addProductInFavoritesResult() {
+        getView().showToastAddInFavorites()
+    }
+
     override fun getUser(): User {
         return getView().getHomeActivityCallback().getUser()
     }

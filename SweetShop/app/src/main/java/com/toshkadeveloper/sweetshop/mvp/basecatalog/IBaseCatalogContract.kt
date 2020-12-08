@@ -18,6 +18,9 @@ interface IBaseCatalogContract {
         fun getHomeActivityCallback(): IHomeContract.View
         fun setTextSearchView(text: String)
         fun addProductInBasket(product: Product)
+        fun addProductInFavorites(product: Product)
+        fun showToastAddInBasket()
+        fun showToastAddInFavorites()
     }
 
     interface Presenter : MvpPresenter<View> {
@@ -26,6 +29,9 @@ interface IBaseCatalogContract {
         fun onCategoriesLoaded(_isCategoriesLoaded: Boolean)
         fun onClickSearch(_searchText: String)
         fun addProductInBasket(product: Product)
+        fun addProductInBasketResult()
+        fun addProductInFavorites(product: Product)
+        fun addProductInFavoritesResult()
         fun getUser(): User
     }
 
@@ -35,5 +41,8 @@ interface IBaseCatalogContract {
         fun getProductByName(productName: String)
         fun getProductByNameResult(products: MutableList<Product>)
         fun addProductInBasket(product: Product)
+        fun addProductInBasketResult()
+        fun addProductInFavorites(product: Product)
+        fun addProductInFavoritesResult()
     }
 }

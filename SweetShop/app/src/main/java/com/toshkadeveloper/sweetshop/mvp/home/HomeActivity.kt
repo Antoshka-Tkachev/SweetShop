@@ -9,7 +9,7 @@ import com.toshkadeveloper.sweetshop.logic.data.User
 import com.toshkadeveloper.sweetshop.mvp.basket.BasketFragment
 import com.toshkadeveloper.sweetshop.mvp.basecatalog.catalog.CatalogFragment
 import com.toshkadeveloper.sweetshop.mvp.basecatalog.searchcatalog.SearchCatalogFragment
-import com.toshkadeveloper.sweetshop.mvp.favorites.FavoritesFragment
+import com.toshkadeveloper.sweetshop.mvp.favorites.FavoriteFragment
 import com.toshkadeveloper.sweetshop.mvp.profile.ProfileFragment
 import kotlinx.android.synthetic.main.activity_home.*
 
@@ -18,7 +18,7 @@ class HomeActivity : AppCompatActivity(), IHomeContract.View {
     private lateinit var transaction: FragmentTransaction
     private val presenter: IHomeContract.Presenter = HomePresenter()
     private val catalogFragment: CatalogFragment = CatalogFragment(this)
-    private val favoritesFragment: FavoritesFragment = FavoritesFragment()
+    private val favoriteFragment: FavoriteFragment = FavoriteFragment()
     private val basketFragment: BasketFragment = BasketFragment()
     private val profileFragment: ProfileFragment = ProfileFragment()
     private var searchFragment: SearchCatalogFragment = SearchCatalogFragment(activityCallback = this)
@@ -29,7 +29,7 @@ class HomeActivity : AppCompatActivity(), IHomeContract.View {
 
         presenter.apply {
             attachView(this@HomeActivity)
-            setUser((this@HomeActivity.intent.extras!!.getSerializable("user") as User))
+            setUser((this@HomeActivity.intent.extras!!.getSerializable("USER") as User))
             viewIsReady()
         }
 
@@ -51,7 +51,7 @@ class HomeActivity : AppCompatActivity(), IHomeContract.View {
                     true
                 }
                 R.id.item_favorites -> {
-                    setSelectedFragment(favoritesFragment)
+                    setSelectedFragment(favoriteFragment)
                     true
                 }
                 R.id.item_basket -> {
@@ -84,8 +84,20 @@ class HomeActivity : AppCompatActivity(), IHomeContract.View {
         setSelectedFragment(catalogFragment)
     }
 
+    override fun setBasketFragment() {
+        setSelectedFragment(basketFragment)
+    }
+
+    override fun setSelectedBasketItem() {
+        bottom_navigation_menu.menu.getItem(2).isChecked = true
+    }
+
     override fun getUser(): User {
         return presenter.getUser()
+    }
+
+    override fun setSelectedCatalogItem() {
+        bottom_navigation_menu.menu.getItem(0).isChecked = true
     }
 
 }

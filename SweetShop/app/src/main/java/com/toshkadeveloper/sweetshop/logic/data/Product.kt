@@ -1,5 +1,7 @@
 package com.toshkadeveloper.sweetshop.logic.data
 
+import java.io.Serializable
+
 data class Product(
     val id: String ="NoID",
     val name: String = "NoName",
@@ -8,4 +10,4 @@ data class Product(
     val category: String = "NoCategory",
     val categoryAndPrice: String = "NoCategory_NoPrice",
     val unit: String = "NoUnit"
-)
+) : Serializable

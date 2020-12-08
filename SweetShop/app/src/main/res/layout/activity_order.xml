@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".mvp.order.OrderActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_order"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:elevation="3dp"
+        android:translationZ="3dp"
+        style="@style/Toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_back_order"
+                android:onClick="onClickBackOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_back_24"
+                app:tint="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/tv_title_order"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/iv_back_order"
+                android:gravity="center_vertical"
+                android:text="Оформление заказа"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimary"
+                android:maxLines="1"/>
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:id="@+id/fl_loaderContainer_order"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_order"
+        android:layout_alignParentBottom="true"
+        android:translationZ="2dp"
+        android:visibility="gone" >
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_infoAboutOrder_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar_order" >
+
+        <EditText
+            android:id="@+id/et_name_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:hint="Имя"
+            android:textColorHint="@color/colorPrimaryDisable"
+            android:textSize="18sp"
+            android:maxLines="1"
+            android:background="@drawable/background_edit_text_with_green_border" />
+
+        <EditText
+            android:id="@+id/et_email_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_name_order"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="5dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:hint="Почта"
+            android:textColorHint="@color/colorPrimaryDisable"
+            android:textSize="18sp"
+            android:maxLines="1"
+            android:background="@drawable/background_edit_text_with_green_border" />
+
+        <EditText
+            android:id="@+id/et_phone_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_email_order"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="5dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:hint="Телефон"
+            android:textColorHint="@color/colorPrimaryDisable"
+            android:textSize="18sp"
+            android:maxLines="1"
+            android:background="@drawable/background_edit_text_with_green_border" />
+
+        <EditText
+            android:id="@+id/et_address_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_phone_order"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="5dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:gravity="top"
+            android:hint="Адрес доставки"
+            android:textColorHint="@color/colorPrimaryDisable"
+            android:textSize="18sp"
+            android:lines="2"
+            android:background="@drawable/background_edit_text_with_green_border" />
+
+        <TextView
+            android:id="@+id/tv_count_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_address_order"
+            android:layout_marginStart="10dp"
+            android:text="Количество товаров:"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_countText_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_address_order"
+            android:layout_toEndOf="@+id/tv_count_order"
+            android:layout_marginStart="10dp"
+            android:text="5"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_price_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_count_order"
+            android:layout_marginStart="10dp"
+            android:text="Общая стоимость:"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_priceText_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_count_order"
+            android:layout_toEndOf="@+id/tv_price_order"
+            android:layout_marginStart="10dp"
+            android:text="12345Р"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_infoAboutOrder_order"
+        android:layout_above="@id/v_shadowBottomNavigation_order"
+        android:background="@color/grey_1"
+        tools:listitem="@layout/item_product_in_order"/>
+
+    <View
+        android:id="@+id/v_shadowBottomNavigation_order"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_above="@id/fl_orderPanel_order"
+        android:background="@drawable/shadow_top" />
+
+    <FrameLayout
+        android:id="@+id/fl_orderPanel_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/ll_ordering_order"
+            android:onClick="onClickOrdering"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:paddingVertical="5dp"
+            android:paddingHorizontal="10dp"
+            android:gravity="center"
+            android:background="@drawable/background_button_with_green_border">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Оформить заказ"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_order_24"
+                app:tint="@color/colorPrimary" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+</RelativeLayout>

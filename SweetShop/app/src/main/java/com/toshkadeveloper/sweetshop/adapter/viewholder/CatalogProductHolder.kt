@@ -32,22 +32,25 @@ class CatalogProductHolder(
             tv_name.text = product.name
             tv_price.text = Html.fromHtml("<b>" + product.price  + " ₽ </b> за " + product.unit)
             iv_like.setOnClickListener {
-                iv_like.setImageResource(R.drawable.ic_like_32)
+                callbackFragment.addProductInFavorites(product)
             }
             iv_productPhoto.setOnClickListener {
-                val intent = Intent(itemView.context, ProductDescriptionActivity::class.java)
-                intent.putExtra("KEY_PRODUCT", product.id)
-                itemView.context.startActivity(intent)
+                startProductDescriptionActivity(product)
             }
             tv_name.setOnClickListener {
-                val intent = Intent(itemView.context, ProductDescriptionActivity::class.java)
-                intent.putExtra("KEY_PRODUCT", product.id)
-                itemView.context.startActivity(intent)
+                startProductDescriptionActivity(product)
             }
             tv_addToBasket.setOnClickListener {
                 callbackFragment.addProductInBasket(product)
             }
         }
+    }
+
+    private fun startProductDescriptionActivity(product: Product) {
+        val intent = Intent(itemView.context, ProductDescriptionActivity::class.java)
+        intent.putExtra("KEY_PRODUCT_ID", product.id)
+        intent.putExtra("KEY_PRODUCT", product)
+        itemView.context.startActivity(intent)
     }
 
     private fun loadAndSetPhoto(product: Product) {

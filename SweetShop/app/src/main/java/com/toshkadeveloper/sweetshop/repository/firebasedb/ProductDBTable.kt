@@ -1,6 +1,5 @@
 package com.toshkadeveloper.sweetshop.repository.firebasedb
 
-import android.util.Log
 import com.google.firebase.database.*
 import com.toshkadeveloper.sweetshop.logic.callback.ICatalogPaginatorCallback
 import com.toshkadeveloper.sweetshop.logic.data.Product
@@ -90,10 +89,8 @@ class ProductDBTable : IProductDBTable {
             bufferProduct = postSnapshot.getValue(Product::class.java)
             if (bufferProduct != null) {
                 products.add(bufferProduct)
-                Log.d("Log.Catalog product:", bufferProduct.toString())
             }
         }
-        Log.d("QWERTY", "sizeSearch = ${products.size}")
         return products
     }
 }

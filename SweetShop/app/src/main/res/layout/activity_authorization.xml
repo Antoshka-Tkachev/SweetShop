@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".mvp.auth.AuthorizationActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_auth"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:elevation="3dp"
+        android:translationZ="3dp"
+        style="@style/Toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_title_auth"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:gravity="center_vertical"
+                android:text="Авторизация"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimary"/>
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_auth">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_authorization_auth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="55dp"
+            app:cardCornerRadius="15dp"
+            android:translationZ="3dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_signInText_auth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center"
+                    android:text="Вход"
+                    android:textSize="30sp"
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/colorPrimary"/>
+
+                <EditText
+                    android:id="@+id/et_loginText_auth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_signInText_auth"
+                    android:hint="Логин"
+                    android:textColorHint="@color/colorPrimaryDisable"
+                    android:textSize="20sp"
+                    android:maxLines="1"/>
+
+                <EditText
+                    android:id="@+id/et_passwordText_auth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/et_loginText_auth"
+                    android:hint="Пароль"
+                    android:textColorHint="@color/colorPrimaryDisable"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/btn_signIn_auth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:layout_below="@+id/et_passwordText_auth"
+                    android:text="Войти"
+                    android:textSize="16sp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btn_signUp_auth"
+                    android:onClick="onClickSignUpAuth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:layout_below="@+id/btn_signIn_auth"
+                    android:text="Зарегистрироваться"
+                    android:textSize="16sp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cv_authorization_auth"
+            android:layout_marginTop="7dp"
+            android:layout_centerHorizontal="true"
+            android:text="Забыли пароль?"
+            android:textSize="14sp"
+            android:textColor="@color/colorPrimary" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
